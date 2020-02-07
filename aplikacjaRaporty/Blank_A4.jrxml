@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="937285e9-5a9b-41e4-8151-b8a8400d1f5f">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+	<parameter name="imie" class="java.lang.String"/>
+	<parameter name="nazwisko" class="java.lang.String"/>
+	<parameter name="nazwa" class="java.lang.String"/>
+	<parameter name="nosnik" class="java.lang.String"/>
+	<parameter name="cena" class="java.lang.String"/>
+	<parameter name="kara" class="java.lang.String"/>
+	<parameter name="data" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM klient INNER JOIN wypozyczenie ON wypozyczenie.id_klient=klient.id_klient INNER JOIN egzemplarz on wypozyczenie.id_egzemplarz=egzemplarz.id_egzemplarz INNER JOIN nosnik ON nosnik.id_nosnik=egzemplarz.id_nosnik INNER JOIN oplata ON oplata.id_oplata=egzemplarz.id_oplata INNER JOIN film ON egzemplarz.id_film=film.id_film]]>
+	</queryString>
+	<field name="IMIE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="IMIE"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="KLIENT"/>
+	</field>
+	<field name="NAZWISKO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="NAZWISKO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="KLIENT"/>
+	</field>
+	<field name="COLUMN_26" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="NAZWA"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="FILM"/>
+	</field>
+	<field name="NAZWA" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="NAZWA"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="NOSNIK"/>
+	</field>
+	<field name="DATA_WYPOZYCZENIA" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="DATA_WYPOZYCZENIA"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="WYPOZYCZENIE"/>
+	</field>
+	<field name="CENA" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="CENA"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="OPLATA"/>
+	</field>
+	<field name="KARA_PRZETRZYMANIE" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="KARA_PRZETRZYMANIE"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="OPLATA"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="126" splitType="Stretch">
+			<rectangle>
+				<reportElement positionType="FixRelativeToBottom" mode="Opaque" x="-20" y="1" width="595" height="125" forecolor="#FFFFFF" backcolor="#37AD2F" uuid="5b74675e-ff57-4e2e-adb7-d095532d33b3"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="-9" y="20" width="370" height="50" uuid="5381ba12-04f8-497e-82e3-950514c33714"/>
+				<textElement>
+					<font size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Formularz Wypozyczenia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="350" y="70" width="220" height="30" uuid="d8e104b6-74d2-4cda-99f6-2fdd06cb142f"/>
+				<textElement>
+					<font size="19" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Wypozyczalnia DVD]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="374" splitType="Stretch">
+			<staticText>
+				<reportElement x="110" y="10" width="133" height="30" uuid="df2da803-b1d7-4c3d-9dff-29361a096315"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Imie i Nazwisko:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="260" y="10" width="231" height="31" uuid="bba1db6e-6fcb-45a4-94a4-76822ef3cfb9"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="110" y="51" width="133" height="30" uuid="2b8e8162-730d-4c7c-801c-ee36735bf563"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Nazwa filmu:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="260" y="50" width="231" height="31" uuid="10576cf9-4a25-4847-8720-9f57d9ca2dad"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="110" y="90" width="133" height="30" uuid="c437322a-9a24-4f59-ae09-9c5016258996"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Nosnik:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="260" y="90" width="231" height="31" uuid="4a01fd21-b345-47b1-929e-41dc8a5139d9"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="110" y="130" width="133" height="30" uuid="fd52c808-e14b-4cb6-bcc6-6189ec7b22ba"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Cena:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="260" y="130" width="231" height="31" uuid="56fbc7f6-463b-4281-8656-d31d89274d60"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="60" y="170" width="190" height="50" uuid="e46e88b3-c057-478c-8a3e-a4eaede0d217"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Kara za przetrzymanie:         (1 dzien)]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="260" y="180" width="231" height="31" uuid="51fc3c5b-ac4b-40cc-9ebc-83b9330f5f1f"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="70" y="230" width="180" height="30" uuid="42943f72-1660-421b-8b6f-2612abd40b8c"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Data Wypozyczenia:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="260" y="230" width="231" height="31" uuid="2dfcb693-3dbd-4169-9fd3-9ecbaa2563a1"/>
+			</rectangle>
+			<textField>
+				<reportElement x="268" y="50" width="231" height="30" uuid="b8b3ead0-e5ed-4a23-a759-5e02b28bdd11"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nazwa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="270" y="11" width="100" height="30" uuid="42b05890-4039-469f-9a76-080c508bcccb"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{imie}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="350" y="11" width="100" height="30" uuid="edb800ca-433e-43bd-87aa-f650cb05cdb7"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nazwisko}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="270" y="90" width="100" height="30" uuid="0961827a-84c9-4e89-9c59-69fabfc2fc6a"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nosnik}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="268" y="130" width="100" height="30" uuid="94c44ba4-1f7e-4489-9208-4a85351a725e"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cena}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="270" y="180" width="100" height="30" uuid="de84b75b-2769-4028-9ef4-16f641a75242"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{kara}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="268" y="230" width="100" height="30" uuid="92f5d569-2a38-480f-a8a6-e0c3e4d91e57"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{data}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="8" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="8" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="8" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="13" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Leaf_Grey_1" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a1f690a3-5977-4467-85f8-6b0bcd5b7210">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<parameter name="SORT" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM film INNER JOIN recenzja ON film.id_recenzja=recenzja.id_recenzja ORDER BY $P!{SORT};]]>
+	</queryString>
+	<field name="NAZWA" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="NAZWA"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="FILM"/>
+	</field>
+	<field name="OPIS" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="OPIS"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="FILM"/>
+	</field>
+	<field name="DLUGOSC" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="DLUGOSC"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="FILM"/>
+	</field>
+	<field name="OCENA" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="OCENA"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="RECENZJA"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="0" y="13" width="263" height="33" uuid="6f9c1004-6140-4588-9c4f-d75824835765"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Oceny Filmów]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="117" y="46" width="211" height="22" uuid="8e16dabd-2e54-471b-9652-83e1d55379ec"/>
+				<text><![CDATA[Wypozyczalnia DVD]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="544e89f7-0fd1-4142-aa23-e335e3be7007"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="138" height="15" uuid="1df8471f-aaf4-47f8-8219-ab55801d962a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="97fe4507-e389-4afa-bca5-be7dfed40cc8"/>
+				</reportElement>
+				<text><![CDATA[NAZWA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="190" y="19" width="138" height="15" uuid="264922c6-60aa-457f-a943-269ccf55115a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3328a046-d020-4948-930f-ef35f4a6f0a0"/>
+				</reportElement>
+				<text><![CDATA[DLUGOSC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="410" y="21" width="138" height="15" uuid="9f40d632-5a2e-480e-adf6-09fdf964308c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c1f6052d-5d54-4de5-811f-d01781b73de6"/>
+				</reportElement>
+				<text><![CDATA[OCENA]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="cb229859-ab9a-4aa3-afa2-84439642f4ee"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="138" height="15" uuid="7e571ea9-e22a-435f-81c5-6e07e6563e71">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="97fe4507-e389-4afa-bca5-be7dfed40cc8"/>
+				</reportElement>
+				<textElement>
+					<font pdfEncoding="Cp1250"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NAZWA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="200" y="-2" width="138" height="15" uuid="404b5c6b-d617-4057-9b6c-b9c0220adc2b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3328a046-d020-4948-930f-ef35f4a6f0a0"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{DLUGOSC}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="417" y="0" width="138" height="15" uuid="fcd26193-df0d-4e40-b3b6-534563102bfe">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c1f6052d-5d54-4de5-811f-d01781b73de6"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{OCENA}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="290" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="401e0e59-de38-4dd2-8257-418cb489177c"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<barChart>
+				<chart evaluationTime="Report">
+					<reportElement x="30" y="10" width="470" height="270" uuid="1e4ebbfe-2d08-41ef-b64a-43d9ab6be92f"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{NAZWA}]]></seriesExpression>
+						<categoryExpression><![CDATA[""]]></categoryExpression>
+						<valueExpression><![CDATA[$F{OCENA} == null?0:Float.valueOf($F{OCENA})]]></valueExpression>
+						<labelExpression><![CDATA[$F{NAZWA}]]></labelExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot>
+					<plot/>
+					<itemLabel/>
+					<categoryAxisFormat>
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+					</valueAxisFormat>
+				</barPlot>
+			</barChart>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="deb23d85-47bb-4de6-978e-113ff117188c"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="c6ce76ba-6e11-41e2-9415-72dc2eff001b"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="5a79d2a0-bcde-4ad5-adf0-c4eb2066f6dd"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
